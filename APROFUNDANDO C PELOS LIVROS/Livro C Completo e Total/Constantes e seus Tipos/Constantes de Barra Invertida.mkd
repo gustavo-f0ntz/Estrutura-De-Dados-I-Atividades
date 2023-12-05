@@ -1,0 +1,27 @@
+## C suporta diversos códifos de barra invertida de forma que você pode facilmente entrar esses caracteres especiais constantes. ##
+
+**Você deve usar os códigos de barra invertida em lugar de seus equivalentes para aumentar a portabilidade.**
+
+## Tabela de códigos de barra invertida: ##
+
+Código:                                        Significado:
+\b                                             Retrocesso(BS)             
+\f                                             Alimentação do Formulário (FF)
+\n                                             Nova Linha (LF)
+\r                                             Retorno do Carro (CR)
+\t                                             Tabulação Horizontal (HT)
+\"                                             Aspas Duplas 
+\'                                             Aspas Simples
+\0                                             Nulo
+\ \                                            Barra Invertida
+\v                                             Tabulação Vertical
+\a                                             Alerta (Beep)
+\N                                             Constante Octal (onde N é uma constante Octal)
+\xN                                            Constante hexadecimal (Onde N é uma constante hexadec.)
+
+**Por exemplo, o programa seguinte envia á tela um caractere de nova linha e uma tabulação e, em seguida, escreve a string isso é um teste**
+
+#include <stdio.h>
+void main (void){
+    printf("\n\t Isso é um teste");
+}
