@@ -1,0 +1,15 @@
+## Há cinco tipos de dados em C ##
+
+São eles:
+
+Caractere, inteiro, ponto flutuante, ponto flutuante de precisão dupla e sem valor 
+(char, int, float, double e void, respectivamente.)
+
+O tamanho e a faixa desses tipos de dados varia, de acordo com o processador e com a implementação do compilador C. Um caractere ocupa geralmente 1 byte, e um inteiro tem normalmente 2 bytes, mas você não pode fazer essa suposição se quiser que os seus programas sejam portáveis a uma gama mais ampla de computadores.
+
+O padrão ANSI estipula apenas a faixa mínima de cada tipo de dado, não o seu tamanho em bytes.
+
+O formato exato dos valores em ponto flutuante depende de como eles são implementados.
+
+O tipo VOID declara explicitamente uma função que não retorna valor algum ou cria ponteiros genéricos.
+
