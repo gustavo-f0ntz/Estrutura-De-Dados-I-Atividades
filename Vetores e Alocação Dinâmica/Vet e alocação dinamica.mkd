@@ -1,0 +1,9 @@
+
+## A alocação dinâmica de memória em C oferece flexibilidade, mas também requer cuidado para evitar vazamentos de memória. Sempre que você alocar memória dinamicamente, certifique-se de liberá-la quando não for mais necessária para evitar desperdício de recursos.##
+
+
+Vetores em C são estruturas de dados que armazenam um conjunto de elementos do mesmo tipo em uma sequência contígua de memória. Eles são úteis quando precisamos armazenar e acessar vários valores relacionados de forma eficiente.
+
+A alocação dinâmica em C permite que você aloque memória durante a execução do programa, em vez de definir o tamanho do vetor durante a compilação. Isso é especialmente útil quando o tamanho do vetor é desconhecido ou pode variar ao longo do tempo.
+
+
