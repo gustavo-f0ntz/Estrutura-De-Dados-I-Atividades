@@ -1,0 +1,30 @@
+## Modificadores de Tipo de Acesso em C
+
+Em C, os modificadores de tipo de acesso `const` e `volatile` são usados para alterar o comportamento das variáveis.
+
+### Const
+
+O modificador `const` é usado para indicar que uma variável não deve ser modificada após ser inicializada. Por exemplo:
+
+```c
+const int x = 10;
+
+
+Neste caso, qualquer tentativa de alterar o valor de ("x") resultará em um erro de compilação.
+```
+
+### Volatile
+
+O modificador volatile é usado para indicar que o valor de uma variável pode ser alterado de maneiras que não podem ser previstas pelo compilador. Isso é comumente usado para variáveis que são acessadas por múltiplos threads ou que são modificadas por hardware externo. Por exemplo:
+
+```c
+volatile int y;
+
+Neste caso, o compilador não fará suposições sobre o valor atual de y e sempre lerá seu valor atual sempre que (y) for referenciado.
+```
+
+Esses modificadores de tipo de acesso permitem um controle mais preciso sobre como as variáveis são usadas e otimizadas, tornando o código mais seguro e eficiente.
+
+
+
+
