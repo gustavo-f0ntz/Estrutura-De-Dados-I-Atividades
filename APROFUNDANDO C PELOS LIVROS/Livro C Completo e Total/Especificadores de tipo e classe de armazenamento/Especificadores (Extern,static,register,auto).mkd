@@ -1,0 +1,21 @@
+## Especificadores de Classe de Armazenamento em C
+
+Em C, os especificadores de classe de armazenamento definem a visibilidade e a vida útil de uma variável ou função dentro de um programa.
+
+### extern
+
+O especificador `extern` é usado para declarar uma variável que é definida em outro lugar, geralmente fora de todas as funções. Variáveis declaradas com `extern` são globais e podem ser acessadas por qualquer função em qualquer arquivo do programa, desde que também sejam declaradas lá.
+
+### static
+
+O especificador `static` é usado para declarar uma variável que mantém seu valor entre chamadas de função. Variáveis `static` são inicializadas apenas uma vez, e seu valor é mantido e acessível apenas dentro do arquivo onde são declaradas.
+
+### register
+
+O especificador `register` é usado para declarar uma variável que será armazenada no registrador do processador, se houver espaço disponível. Variáveis `register` têm o tempo de acesso mais rápido e são usadas para variáveis que são frequentemente acessadas, como contadores em loops.
+
+### auto
+
+O especificador `auto` é o padrão para todas as variáveis locais e é raramente usado explicitamente. Variáveis `auto` são automaticamente alocadas e desalocadas quando a função em que são declaradas é chamada e retorna, respectivamente.
+
+Esses especificadores de classe de armazenamento permitem um controle mais preciso sobre como e onde as variáveis são armazenadas e acessadas, melhorando a eficiência e a organização do código.
