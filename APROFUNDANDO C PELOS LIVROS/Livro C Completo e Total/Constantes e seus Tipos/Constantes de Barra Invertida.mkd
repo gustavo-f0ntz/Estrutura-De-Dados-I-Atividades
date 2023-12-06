@@ -90,6 +90,7 @@ Este código imprimirá "Novo", pois o \r move o cursor para o início da linha.
 ```c
 printf("\101\n");  // Imprime "A", pois 101 é o valor octal para "A"
 printf("\x41\n");  // Imprime "A", pois 41 é o valor hexadecimal para "A"
+
 ```
 
 
