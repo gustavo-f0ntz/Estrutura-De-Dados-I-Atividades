@@ -52,9 +52,46 @@ Este código imprimirá o caminho do arquivo com barras invertidas.
 
 `\`: Este código é usado para inserir aspas duplas em uma string. Por exemplo:
 
-```
+```c
 printf("\"Esta é uma citação.\"\n");
+
+Este código imprimirá a frase 'Esta é uma citação.' com aspas simples.
+
 ```
+
+ `\b`: Este código é usado para inserir um retrocesso em uma string. Por exemplo:
+
+```c
+printf("Texto\b\n");
+
+Este código imprimirá "Text", pois o \b remove o último caractere.
+
+```
+
+`\f`: Este código é usado para inserir uma alimentação de formulário em uma string. Ele é mais usado em dispositivos que suportam este tipo de controle de página.
+
+`\r`: Este código é usado para inserir um retorno de carro em uma string. Por exemplo:
+
+```c
+printf("Texto\rNovo\n");
+
+Este código imprimirá "Novo", pois o \r move o cursor para o início da linha.
+
+```
+
+`\0`: Este código é usado para inserir um caractere nulo em uma string. Ele é usado principalmente para marcar o final de uma string em C.
+
+`\v`: Este código é usado para inserir uma tabulação vertical em uma string. Ele é mais usado em dispositivos que suportam este tipo de controle de página.
+
+`\a`: Este código é usado para inserir um beep em uma string. Ele é mais usado em dispositivos que suportam este tipo de alerta sonoro.
+
+`\N e \xN`: Estes códigos são usados para inserir constantes octal e hexadecimal, respectivamente, em uma string. Por exemplo:
+
+```c
+printf("\101\n");  // Imprime "A", pois 101 é o valor octal para "A"
+printf("\x41\n");  // Imprime "A", pois 41 é o valor hexadecimal para "A"
+```
+
 
 
 
