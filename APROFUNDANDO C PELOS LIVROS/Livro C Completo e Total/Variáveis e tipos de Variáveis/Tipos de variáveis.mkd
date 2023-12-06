@@ -1,0 +1,25 @@
+
+## Variáveis em C
+
+Uma variável em C é uma posição nomeada de memória usada para armazenar valores que podem ser modificados pelo programa. 
+
+### Declaração de Variáveis
+
+Todas as variáveis em C devem ser declaradas antes de serem usadas. A declaração de uma variável informa ao compilador o nome da variável e o tipo de valor que ela irá armazenar. A forma geral de declaração é:
+
+```c
+tipo nome_da_variavel;
+```
+
+### Variáveis Locais
+
+Variáveis locais são declaradas dentro de uma função e só podem ser usadas dentro dessa função. Elas são criadas quando a função é chamada e destruídas quando a função termina.
+
+### Parâmetros Formais 
+
+Parâmetros formais são variáveis especiais que são usadas para receber valores quando uma função é chamada. Eles são declarados na lista de parâmetros de uma função.
+
+### Variáveis globais
+
+Variáveis globais são declaradas fora de todas as funções e podem ser acessadas por qualquer função dentro do programa. Elas existem durante toda a execução do programa.
+
