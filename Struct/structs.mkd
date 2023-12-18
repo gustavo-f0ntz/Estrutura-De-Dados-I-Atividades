@@ -1,0 +1,120 @@
+# 🚀 Structs em C: Resumo Rápido para Estudantes de TI 🤓
+
+## O Que São Structs?
+
+**Structs** são como pacotes que armazenam diferentes tipos de informações. Se pensarmos em uma loja online, seria como uma caixa que tem nome, preço e quantidade de um produto.
+
+## Como Criar uma Struct?
+
+Vamos criar uma struct chamada `Produto` com nome, preço e quantidade:
+
+```c
+struct Produto {
+    char nome[50];
+    float preco;
+    int quantidade;
+};
+```
+### Explicação Rápida:
+
+````c
+char nome[50]; 
+//Guardamos o nome do produto (até 50 caracteres).
+float preco;
+ //Guardamos o preço do produto (número com ponto flutuante).
+int quantidade;
+// Guardamos a quantidade do produto (número inteiro).
+````
+
+### Como Usar uma Struct?
+
+Agora, como usamos essa struct? Veja um exemplo prático:
+
+```c
+#include <stdio.h>
+
+int main() {
+    // Criando um produto usando a struct
+    struct Produto meuProduto;
+
+    // Preenchendo as informações
+    strcpy(meuProduto.nome, "Laptop");
+    meuProduto.preco = 1299.99;
+    meuProduto.quantidade = 10;
+
+    // Mostrando na tela as informações
+    printf("Produto: %s, Preço: %.2f, Quantidade: %d\n", meuProduto.nome, meuProduto.preco, meuProduto.quantidade);
+
+    return 0;
+}
+```
+
+
+Claro, aqui está o resumo sobre structs em C em formato Markdown:
+
+markdown
+Copy code
+# 🚀 Structs em C: Resumo Rápido para Estudantes de TI 🤓
+
+## O Que São Structs?
+
+**Structs** são como pacotes que armazenam diferentes tipos de informações. Se pensarmos em uma loja online, seria como uma caixa que tem nome, preço e quantidade de um produto.
+
+## Como Criar uma Struct?
+
+Vamos criar uma struct chamada `Produto` com nome, preço e quantidade:
+
+```c
+struct Produto {
+    char nome[50];
+    float preco;
+    int quantidade;
+};
+Explicação Rápida:
+
+char nome[50];: Guardamos o nome do produto (até 50 caracteres).
+float preco;: Guardamos o preço do produto (número com ponto flutuante).
+int quantidade;: Guardamos a quantidade do produto (número inteiro).
+Como Usar uma Struct?
+Agora, como usamos essa struct? Veja um exemplo prático:
+
+c
+Copy code
+#include <stdio.h>
+
+int main() {
+    // Criando um produto usando a struct
+    struct Produto meuProduto;
+
+    // Preenchendo as informações
+    strcpy(meuProduto.nome, "Laptop");
+    meuProduto.preco = 1299.99;
+    meuProduto.quantidade = 10;
+
+    // Mostrando na tela as informações
+    printf("Produto: %s, Preço: %.2f, Quantidade: %d\n", meuProduto.nome, meuProduto.preco, meuProduto.quantidade);
+
+    return 0;
+}
+
+```
+
+### Explicação Rápida:
+
+```c
+struct Produto meuProduto;
+// Criamos um produto usando a struct.
+
+strcpy(meuProduto.nome, "Laptop");
+
+//Colocamos o nome do produto.
+
+meuProduto.preco = 1299.99;
+// Colocamos o preço do produto.
+
+meuProduto.quantidade = 10;
+// Colocamos a quantidade do produto.
+
+printf("Produto: %s, Preço: %.2f, Quantidade: %d\n", meuProduto.nome, meuProduto.preco, meuProduto.quantidade);
+// Mostramos as informações na tela.
+``  `
