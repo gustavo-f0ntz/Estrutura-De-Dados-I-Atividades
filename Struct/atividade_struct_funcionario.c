@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct funcionario{
+
+// Definição da estrutura Funcionario
+struct Funcionario {
     char nome[20];
     int idade;
     float salario;
@@ -8,8 +10,8 @@ struct funcionario{
     char sexo[10];
 };
 
-void preenche(struct funcionario *funcionario){
-
+// Função para preencher os dados de um funcionário
+void preenche(struct Funcionario *funcionario) {
     printf("Digite o nome do funcionário: ");
     scanf(" %[^\n]", funcionario -> nome);
 
@@ -26,7 +28,8 @@ void preenche(struct funcionario *funcionario){
     scanf(" %[^\n]", funcionario -> sexo);
 }
 
-void imprimir (struct funcionario *funcionario){
+// Função para imprimir os dados de um funcionário
+void imprimir(struct Funcionario *funcionario) {
     printf("Nome: %s\n", funcionario -> nome);
     printf("Idade: %d\n", funcionario -> idade);
     printf("Salário: %.2f\n", funcionario -> salario);
@@ -34,85 +37,76 @@ void imprimir (struct funcionario *funcionario){
     printf("Sexo: %s\n", funcionario -> sexo);
 }
 
-
-void alterar_Salario(struct funcionario *funcionario){
+// Função para alterar o salário de um funcionário
+void alterarSalario(struct Funcionario *funcionario) {
     printf("Digite o novo salario: ");
     scanf("%f", &funcionario -> salario);
 }
 
-void maior_e_menor(struct funcionario *funcionario,  int n){
-    int maior_salario  = funcionario[0].salario;
-    int menor_salario = funcionario[0].salario;
-    int posicao_maior = 0;
-    int posicao_menor = 0;
+// Função para encontrar o funcionário com maior e menor salário
+void maiorEMenor(struct Funcionario *funcionario,  int n) {
+    float maiorSalario  = funcionario[0].salario;
+    float menorSalario = funcionario[0].salario;
+    int posicaoMaior = 0;
+    int posicaoMenor = 0;
 
-    for (int i = 0; i < n; i++){
-        if(funcionario[i].salario > maior_salario){
-            maior_salario = funcionario[i].salario;
-            posicao_maior = i;
-
+    for (int i = 0; i < n; i++) {
+        if(funcionario[i].salario > maiorSalario) {
+            maiorSalario = funcionario[i].salario;
+            posicaoMaior = i;
         }
-        else if(funcionario[i].salario < menor_salario){
-            menor_salario = funcionario[i].salario;
-            posicao_menor = i;
+        else if(funcionario[i].salario < menorSalario) {
+            menorSalario = funcionario[i].salario;
+            posicaoMenor = i;
         }
     }
 
     printf("------------------------------------\n");
-
-    printf(" Cargo do funionario: %s\n "
-    "Mairo salario: %.2f\n",funcionario[posicao_maior].cargo,funcionario[posicao_maior].salario);
-
+    printf("Cargo do funcionario com maior salario: %s\nSalario: %.2f\n",funcionario[posicaoMaior].cargo,funcionario[posicaoMaior].salario);
     printf("------------------------------------\n");
-    
-    printf(" Cargo do funionario: %s\n "
-    "Menor salario: %.2f\n",funcionario[posicao_menor].cargo,funcionario[posicao_menor].salario);
-    
+    printf("Cargo do funcionario com menor salario: %s\nSalario: %.2f\n",funcionario[posicaoMenor].cargo,funcionario[posicaoMenor].salario);
 }
 
-int main(void){
+int main(void) {
+    int quantidadeFuncionarios, opcao;
+    printf("Digite a quantidade de funcionarios: ");
+    scanf("%d", &quantidadeFuncionarios); 
 
-    int n,op;
-    printf("Digite a quantidade de funcionario: ");
-    scanf("%d", &n); 
+    struct Funcionario funcionario[quantidadeFuncionarios];
 
-   struct funcionario funcionario[n];
-
-
-   for (int i = 0; i < n; i++){
+    // Preenchimento dos dados dos funcionários
+    for (int i = 0; i < quantidadeFuncionarios; i++) {
         printf("------------------------------------\n");
         printf("Digite os dados do funcionário %d\n", i+1);
         preenche(&funcionario[i]);
         printf("------------------------------------\n");
-   }
+    }
 
-   for (int i = 0; i < n; i++){
+    // Impressão dos dados dos funcionários
+    for (int i = 0; i < quantidadeFuncionarios; i++) {
         printf("Dados do funcionário %d\n", i +1);
         printf("------------------------------------\n");
         imprimir(&funcionario[i]);
         printf("------------------------------------\n");
-   }
+    }
 
-   printf("VOCÊ DESEJA ALTERAR O VALOR DE ALGUM SALARIO (1- SIM, 2- NÃO): ");
-   scanf("%d",&op);
+    printf("Você deseja alterar o valor de algum salario (1- Sim, 2- Não): ");
+    scanf("%d",&opcao);
 
-   if(op == 1){
-        int funcionario_escolhido;
-        printf("DIGITE O NUMERO DO FUNCIONARIO QUE DESEJA ALTERAR O SALARIO: ");
-        scanf("%d",&funcionario_escolhido); 
+    if(opcao == 1) {
+        int funcionarioEscolhido;
+        printf("Digite o número do funcionário que deseja alterar o salário: ");
+        scanf("%d",&funcionarioEscolhido); 
 
-        alterar_Salario(&funcionario[funcionario_escolhido-1]);
+        alterarSalario(&funcionario[funcionarioEscolhido-1]);
 
         printf("------------------------------------\n");
-        printf("DADOS DO FUNCIONARIO %d\n",funcionario_escolhido);
+        printf("Dados do funcionário %d\n",funcionarioEscolhido);
         printf("------------------------------------\n");   
-        imprimir(&funcionario[funcionario_escolhido-1]);
-   }
+        imprimir(&funcionario[funcionarioEscolhido-1]);
+    }
 
-    maior_e_menor(funcionario,n);
+    maiorEMenor(funcionario, quantidadeFuncionarios);
 
-
-
-    
     return 0;
 }
