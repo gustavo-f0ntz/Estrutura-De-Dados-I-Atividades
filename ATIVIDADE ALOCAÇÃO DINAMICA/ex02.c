@@ -1,46 +1,102 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
-    int N, i, mulheres_gostaram = 0, homens_nao_gostaram = 0, total_mulheres = 0, total_homens = 0;
-    char genero, opiniao;
+#define ESTUDANTES 10
 
-    printf("Digite o numero de pessoas entrevistadas: ");
-    scanf("%d", &N);
-    
-    char *generos = malloc(N * sizeof(char));
-    char *opinioes = malloc(N * sizeof(char));
+void calcularResultado(char *respostasCorretas, char **respostasEstudantes, int totalQuestoes)
+{
+    float nota = 0;
+    float acertos = 0;
+    float aprovados = 0;
 
-    if(generos == NULL || opinioes == NULL) {
-        printf("Erro na alocacao de memoria.\n");
-        return 1;
-    }
-
-    for(i = 0; i < N; i++) {
-        printf("Digite o gênero (M/F) e a opinião (G/N) da pessoa %d: ", i+1);
-        scanf(" %c %c", &genero, &opiniao);
-
-        generos[i] = genero;
-        opinioes[i] = opiniao;
-
-        if(genero == 'F' || genero == 'f') {
-            total_mulheres++;
-            if(opiniao == 'G' || opiniao == 'g') {
-                mulheres_gostaram++;
+    printf("----------NOTAS DOS ESTUDANTES----------\n");
+    for (int i = 0; i < ESTUDANTES; i++)
+    {
+        nota = 0;
+        acertos = 0;
+        for (int j = 0; j < totalQuestoes; j++)
+        {
+            if (respostasEstudantes[i][j] == respostasCorretas[j])
+            {
+                acertos++;
             }
-        } else if(genero == 'M' || genero == 'm') {
-            total_homens++;
-            if(opiniao == 'N' || opiniao == 'n') {
-                homens_nao_gostaram++;
-            }
+        }
+
+        nota = acertos / totalQuestoes * 10;
+        printf("ESTUDANTE %d:  %.2f\n", i + 1, nota);
+
+        if (nota >= 6.0)
+        {
+            aprovados++;
         }
     }
 
-    printf("Porcentagem de mulheres que gostaram do produto: %.2f%%\n", ((float)mulheres_gostaram / total_mulheres) * 100);
-    printf("Porcentagem de homens que não gostaram do produto: %.2f%%\n", ((float)homens_nao_gostaram / total_homens) * 100);
+    float porcentagemAprovados = (aprovados / ESTUDANTES) * 100;
 
-    free(generos);
-    free(opinioes);
+    printf("PORCENTAGEM DE APROVADOS: %.2f %%", porcentagemAprovados);
+}
+
+int main(void)
+{
+
+    int totalQuestoes;
+
+    printf("DIGITE O TOTAL DE QUESTÕES: ");
+    scanf("%d", &totalQuestoes);
+
+    char *respostasCorretas = (char *)malloc(totalQuestoes * sizeof(char));
+    char **respostasEstudantes = (char **)malloc(10 * sizeof(char *));
+
+    for (int i = 0; i < 10; i++)
+    {
+        respostasEstudantes[i] = (char *)malloc(totalQuestoes * sizeof(char));
+        if (respostasEstudantes[i] == NULL)
+        {
+            printf("ERRO DE ALOCAÇÃO DE MEMORIA\n");
+            exit(1);
+        }
+    }
+
+    if (respostasCorretas == NULL)
+    {
+        printf("ERRO DE ALOCAÇÃO DE MEMORIA\n");
+        exit(1);
+    }
+
+    printf("--------GABARITO DA PROVA----------\n");
+
+    for (int i = 0; i < totalQuestoes; i++)
+    {
+
+        printf("DIGITE A RESPOSTA DA QUESTÃO %d: ", i + 1);
+        scanf(" %c", &respostasCorretas[i]);
+    }
+    printf("------------------------------------\n");
+
+    printf("\n");
+
+    for (int i = 0; i < ESTUDANTES; i++)
+    {
+
+        printf("---------------ESTUDANTE %d--------------\n", i + 1);
+
+        for (int j = 0; j < totalQuestoes; j++)
+        {
+            printf("DIGITE A RESPOSTA DO ESTUDANTE PARA A QUESTÃO %d: ", i + 1);
+            scanf(" %c", &respostasEstudantes[i][j]);
+        }
+    }
+
+
+    calcularResultado(respostasCorretas, respostasEstudantes, totalQuestoes);
+
+    free(respostasEstudantes);
+
+    for (int i = 0; i < 10; i++)
+    {
+        free(respostasEstudantes[i]);
+    }
+    free(respostasCorretas);
 
     return 0;
 }
