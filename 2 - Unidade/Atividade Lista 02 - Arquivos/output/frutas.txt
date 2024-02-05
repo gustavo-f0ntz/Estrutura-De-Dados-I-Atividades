@@ -1,0 +1,4 @@
+Goiaba,20.00
+Banana,15.00
+Laranja,35.00
+Jaca,23.00
