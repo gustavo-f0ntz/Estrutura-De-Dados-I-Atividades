@@ -1,0 +1,5 @@
+Nome: Alice	Média: 8.23	Situação: Aprovado
+Nome: Bob	Média: 6.50	Situação: Reprovado
+Nome: Charlie	Média: 9.10	Situação: Aprovado
+Nome: David	Média: 5.43	Situação: Reprovado
+Nome: Eva	Média: 7.67	Situação: Aprovado
