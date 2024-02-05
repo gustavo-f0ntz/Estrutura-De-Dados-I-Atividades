@@ -1,0 +1,3 @@
+Menor Elemento: 11
+Maior Elemento: 99
+Média dos Elementos: 52.00
