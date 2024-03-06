@@ -23,6 +23,10 @@ int main (void) {
     } else {
         printf("Elemento encontrado\n");
     }
+    // retirar um elemento da lista
+    lista_encadeada = lst_retira(lista_encadeada, 5);
+    lst_imprime(lista_encadeada);
+    
 
 
     return 0;

@@ -30,4 +30,7 @@ int lst_vazia(Lista * l);
 // Funcao que busca um elemento na lista
 Lista * lst_busca(Lista * l, int v);
 
+// Funcao que retira um elemento da lista
+Lista * lst_retira(Lista * l, int v);
+
 

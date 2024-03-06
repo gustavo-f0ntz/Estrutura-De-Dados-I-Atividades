@@ -57,3 +57,45 @@ Lista * lst_busca(Lista * l, int v){
     }
     return NULL;
 }
+
+// funcao para remover um elemento da lista
+Lista * lst_retira(Lista * l, int v){
+    Lista * anterior = NULL;
+    Lista * p = l;
+    while (p != NULL && p->info != v){
+        anterior = p;
+        p = p->proximo_elemento;
+    }
+    if (p == NULL){
+        return l;
+    }
+    if (anterior == NULL){
+        l = p->proximo_elemento;
+    } else {
+        anterior->proximo_elemento = p->proximo_elemento;
+    }
+    free(p);
+    return l;
+}
+
+// funcao para retornar o numero de nos da lista que possuem o campo info com valores maiores que n
+int maiores(Lista * l, int n){
+    Lista * contador;
+    int contador_maiores = 0;
+    for (contador = l; contador != NULL; contador = contador->proximo_elemento){
+        if (contador->info > n){
+            contador_maiores++;
+        }
+    }
+    return contador_maiores;
+}
+
+// funcao para liberar a memoria alocada para a lista
+void lst_libera(Lista * l){
+    Lista * p = l;
+    while (p != NULL){
+        Lista * t = p->proximo_elemento;
+        free(p);
+        p = t;
+    }
+}
